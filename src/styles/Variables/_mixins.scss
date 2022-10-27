@@ -1,0 +1,20 @@
+@mixin icon($image, $color){
+    background-image: url($image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1rem solid $color;
+    box-shadow: inset 0px 8px 5px rgba( rgb(187, 185, 185), 1),
+            0px 8px darken( $color, 8%);
+}
+@mixin boxShadow($color) {
+    box-shadow: inset 0px 8px 5px rgba( rgb(187, 185, 185), 1),
+    0px 8px darken( $color, 8%),
+    0 0 0 40px rgba(white,  .07),
+    0 0 0 80px rgba( white,  .05),
+    0 0 0 120px rgba( white,  .02);
+
+    
+}
+

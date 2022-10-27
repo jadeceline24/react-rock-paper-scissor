@@ -1,0 +1,43 @@
+@use './Variables/' as *;
+
+.play{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding-top: 3rem;
+    height: 65vh;
+    
+    .triangle{
+        position: absolute;
+        align-self: center;
+        margin-top: 3rem;
+    }
+    &__you{
+        display: flex;
+        justify-content: center;
+        
+        .icon{
+            width: 150px;
+            height: 150px;
+
+            &-paper{
+            
+                @include icon($imageP, $paper-gradient);
+                transform: translateX(3rem);   
+                
+            }
+            &-rock{
+                @include icon($imageR, $rock-gradient);
+                transform: translateX(-9rem)translateY(11rem);
+            }
+            &-scissor{
+                @include icon($imageS, $scissors-gradient);
+                transform: translateX(7rem);
+            }
+            
+        }
+        
+    }
+    
+}

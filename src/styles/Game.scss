@@ -1,0 +1,170 @@
+@use './Variables/' as *;
+
+.game{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+    text-transform: uppercase;
+    height: 65vh;
+    @include breakpoint(small) {
+        flex-wrap: wrap;
+        
+       }
+        &__you{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-left: 2.5rem;
+            @include breakpoint(small) {
+                flex-direction: column-reverse;
+                margin-left: 0;
+                
+               }
+            .text{
+                font-size: 1.5rem;
+                margin: 2rem;
+                @include breakpoint(small) {
+                    font-size: 1rem;
+                   }
+            }
+            .game__icon{
+                .icon{
+                    width: 200px;
+                    height: 200px;
+                    background-size: 40%;
+                    @include breakpoint(small) {
+                        width: 150px;
+                        height: 150px;
+                        margin-top: 2rem;
+                       }
+                    &-paper{
+                        @include icon($imageP, $paper-gradient);
+                        
+                        &--winner{
+                            @include boxShadow($paper-gradient);
+                        }
+                    }
+
+                    &-rock{
+                        @include icon($imageR, $rock-gradient);
+                        &--winner{
+                            @include boxShadow($rock-gradient);
+                        }
+                    }
+                    &-scissor{
+                        @include icon($imageS, $scissors-gradient);
+                        &--winner{
+                            @include boxShadow($scissors-gradient);
+                        }
+                    }
+                    
+                }
+                
+            }
+        }
+        &__result{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 5rem 2rem;
+            @include breakpoint(small) {
+                order: 3;
+               
+               }
+            
+            .text{
+                font-size: 2.5rem;
+                @include breakpoint(small) {
+                    font-size: 3rem;
+                   }
+            }
+            .play-again{
+                background-color: #fff;
+                padding: .5rem 2rem;
+                border-radius: 5px;
+                font-size: .8rem;
+                letter-spacing: 2px;
+                margin-top: 1rem;
+                color: $dark-text;
+                
+
+                &:hover{
+                    color: $rock-gradient;
+                }
+
+            }
+        }
+        &__house{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-right: 2.5rem;
+            
+            @include breakpoint(small) {
+                order: 1;
+                flex-direction: column-reverse;
+                margin-right: 0;
+               }
+            .text{
+                font-size: 1.5rem;
+                margin: 2rem;
+                @include breakpoint(small) {
+                    font-size: 1rem;
+                   }
+            }
+            .icon{
+                width: 200px;
+                height: 200px;
+                background-size: 40%;
+                @include breakpoint(small) {
+                    width: 150px;
+                    height: 150px;
+                    margin-top: 2rem;
+                   }
+
+                &-paper{
+                    @include icon($imageP, $paper-gradient);
+                    &--winner{
+                        @include boxShadow($paper-gradient);
+                    }
+                }
+                &-rock{
+                    @include icon($imageR, $rock-gradient);
+                    &--winner{
+                        @include boxShadow($rock-gradient);
+                    }
+                }
+                &-scissor{
+                    @include icon($imageS, $scissors-gradient);
+                    &--winner{
+                        @include boxShadow($scissors-gradient);
+                    }
+                }
+                
+            }
+            .count{
+                width: 200px;
+                height: 200px;
+                background-color: rgba($color: #000000, $alpha: .3);
+                border-radius: 50%;
+                font-size: 5rem;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                @include breakpoint(small) {
+                    width: 150px;
+                    height: 150px;
+                    font-size: 3rem;
+                    margin-top: 2rem;
+                   }
+                
+            }
+        }
+        
+    }
+    
